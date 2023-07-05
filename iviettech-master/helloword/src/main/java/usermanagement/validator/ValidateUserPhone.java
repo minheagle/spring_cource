@@ -7,7 +7,7 @@ import usermanagement.repository.IUserRepository;
 @Component
 public class ValidateUserPhone implements IValidator{
     @Override
-    public void validate(User user, IUserRepository userRepository) {
+    public void validate(User user) {
         if (user.getPhone().isEmpty()){
             throw new RuntimeException("Số điện thoại không được để trống !");
         }

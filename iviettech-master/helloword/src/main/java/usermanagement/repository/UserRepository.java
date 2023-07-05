@@ -179,8 +179,7 @@ public class UserRepository implements IUserRepository{
         }
         if(getIndex(id) != -1){
             int index = getIndex(id);
-            listUser.remove(index);
-            listUser.add(index, updateUser);
+            listUser.set(index, updateUser);
         }else {
             throw new RuntimeException("Lừa nhau à, làm gì có ai có Id = " + id);
         }
@@ -202,9 +201,29 @@ public class UserRepository implements IUserRepository{
     }
 
     @Override
-    public boolean checkExist(long id) {
+    public boolean checkExistId(long id) {
         for (int i = 0; i < listUser.size(); i++) {
             if (listUser.get(i).getId() == id){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkExistEmail(String email) {
+        for (int i = 0; i < listUser.size(); i++) {
+            if (listUser.get(i).getEmail().equals(email)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkExistPhone(String phone) {
+        for (int i = 0; i < listUser.size(); i++) {
+            if (listUser.get(i).getPhone().equals(phone)){
                 return true;
             }
         }

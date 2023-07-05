@@ -104,7 +104,7 @@ public class UserService implements IUserService{
     }
 
     private void validateAccount(final User user){
-        validators.forEach(validator -> validator.validate(user, userRepository));
+        validators.forEach(validator -> validator.validate(user));
     }
 
     @Override
@@ -131,6 +131,6 @@ public class UserService implements IUserService{
 
     @Override
     public boolean checkExist(long id) {
-        return userRepository.checkExist(id);
+        return userRepository.checkExistId(id);
     }
 }

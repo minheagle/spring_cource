@@ -7,7 +7,7 @@ import usermanagement.repository.IUserRepository;
 @Component
 public class ValidateUserPassword implements IValidator{
     @Override
-    public void validate(User user, IUserRepository userRepository) {
+    public void validate(User user) {
         if (user.getPassword().isEmpty()){
             throw new RuntimeException("Mật khẩu không được để trống");
         }

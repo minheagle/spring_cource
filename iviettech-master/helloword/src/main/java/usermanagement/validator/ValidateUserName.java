@@ -7,7 +7,7 @@ import usermanagement.repository.IUserRepository;
 @Component
 public class ValidateUserName implements IValidator{
     @Override
-    public void validate(User user, IUserRepository userRepository) {
+    public void validate(User user) {
         if(user.getName().isEmpty()){
             throw new RuntimeException("Tên không được để trống !");
         }

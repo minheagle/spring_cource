@@ -8,7 +8,7 @@ import usermanagement.service.IUserService;
 @Component
 public class ValidateUserAge implements IValidator{
     @Override
-    public void validate(User user, IUserRepository userRepository) {
+    public void validate(User user) {
         if (user.getAge() == 0){
             throw new RuntimeException("Vui lòng nhập tuổi !");
         }

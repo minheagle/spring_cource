@@ -108,28 +108,27 @@ public class ManagementApp {
     }
 
     private void addNewUser(){
-        User newUser = new User();
-        System.out.println("Mời nhập Id :");
-        long newUserId = Long.parseLong(scanner.nextLine());
         try {
-                newUser.setId(newUserId);
-                System.out.println("Mời nhập tên :");
-                newUser.setName(scanner.nextLine());
-                System.out.println("Mời nhập tuổi : ");
-                newUser.setAge(Integer.parseInt(scanner.nextLine()));
-                System.out.println("Mời nhập địa chỉ : ");
-                newUser.setAddress(scanner.nextLine());
-                System.out.println("Mời nhập số điện thoại : ");
-                newUser.setPhone(scanner.nextLine());
-                System.out.println("Mời nhập email : ");
-                newUser.setEmail(scanner.nextLine());
-                System.out.println("Mời nhập mật khẩu : ");
-                newUser.setPassword(scanner.nextLine());
-                newUser.setRole("user");
-                User user = userService.insert(newUser);
-                System.out.println("Thêm User thành công !");
-                System.out.println(user.toString());
+            User newUser = new User();
+            System.out.println("Mời nhập Id :");
+            newUser.setId(Long.parseLong(scanner.nextLine()));
+            System.out.println("Mời nhập tên :");
+            newUser.setName(scanner.nextLine());
+            System.out.println("Mời nhập tuổi : ");
+            newUser.setAge(Integer.parseInt(scanner.nextLine()));
+            System.out.println("Mời nhập địa chỉ : ");
+            newUser.setAddress(scanner.nextLine());
+            System.out.println("Mời nhập số điện thoại : ");
+            newUser.setPhone(scanner.nextLine());
+            System.out.println("Mời nhập email : ");
+            newUser.setEmail(scanner.nextLine());
+            System.out.println("Mời nhập mật khẩu : ");
+            newUser.setPassword(scanner.nextLine());
+            newUser.setRole("user");
 
+            User user = userService.insert(newUser);
+            System.out.println("Thêm User thành công !");
+            System.out.println(user.toString());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

@@ -1,6 +1,7 @@
 package usermanagement.configuration;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import usermanagement.app.ManagementApp;
 import usermanagement.repository.IUserRepository;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@ComponentScan(basePackages = "usermanagement")
 public class BeanConfiguration {
     @Bean
     public IUserService userService(){
